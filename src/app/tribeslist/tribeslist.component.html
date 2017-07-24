@@ -1,0 +1,19 @@
+<p>
+  tribeslist works!
+</p>
+
+<ul class="listOfTribes">
+  <li *ngFor="let tribe of listOfTribes" (click)="onSelect(tribe)">
+    <span class="badge"> {{tribe.id}}</span>
+    <span> {{tribe.name}}</span>
+    <button class="delete">X</button>
+  </li>
+</ul>
+
+
+<div *ngIf="selectedTribe">
+  <h2>
+    {{selectedTribe.name | uppercase}} is selectedTribe
+  </h2>
+  <button (click)="gotoDetail()">View Details</button>
+  </div>

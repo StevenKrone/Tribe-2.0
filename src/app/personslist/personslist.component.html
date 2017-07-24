@@ -1,0 +1,19 @@
+<p>
+  personslist works!
+</p>
+
+
+<ul class="persons">
+  <li *ngFor="let person of persons" (click)="onSelect(person)">
+    <span class="badge"> {{person.id}}</span>
+    <span> {{person.name}}</span>
+    <button class="delete">X</button>
+  </li>
+</ul>
+
+<div *ngIf="selectedPerson">
+  <h2>
+    {{selectedPerson.name | uppercase}} is selectedPerson
+  </h2>
+  <button (click)="gotoDetail()">View Details</button>
+  </div>

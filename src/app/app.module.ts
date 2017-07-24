@@ -3,18 +3,37 @@ import { NgModule } from '@angular/core';
 import { FormsModule } from '@angular/forms';
 import { HttpModule } from '@angular/http';
 
+import { AppRoutingModule } from './app-routing.module';
+
+import {PersonService} from './_services/person.service';
+import {TribeService} from './_services/tribe.service';
+
+
 import { AppComponent } from './app.component';
+import { TribeslistComponent } from './tribeslist/tribeslist.component';
+import { TribedetailComponent } from './tribedetail/tribedetail.component';
+import { PersonslistComponent } from './personslist/personslist.component';
+import { PersonsdetailComponent } from './personsdetail/personsdetail.component';
+import { DashboardComponent } from './dashboard/dashboard.component';
+import { LoginComponent } from './login/login.component';
 
 @NgModule({
   declarations: [
-    AppComponent
+    AppComponent,
+    TribeslistComponent,
+    TribedetailComponent,
+    PersonslistComponent,
+    PersonsdetailComponent,
+    DashboardComponent,
+    LoginComponent
   ],
   imports: [
     BrowserModule,
     FormsModule,
-    HttpModule
+    HttpModule,
+    AppRoutingModule
   ],
-  providers: [],
+  providers: [PersonService, TribeService],
   bootstrap: [AppComponent]
 })
 export class AppModule { }
