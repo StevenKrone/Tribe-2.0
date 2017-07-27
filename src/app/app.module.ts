@@ -8,6 +8,10 @@ import { AppRoutingModule } from './app-routing.module';
 import {PersonService} from './_services/person.service';
 import {TribeService} from './_services/tribe.service';
 
+import { InMemoryWebApiModule } from 'angular-in-memory-web-api';
+import { InMemoryDataService }  from './_services/in-memory-data.service';
+
+
 
 import { AppComponent } from './app.component';
 import { TribeslistComponent } from './tribeslist/tribeslist.component';
@@ -31,6 +35,7 @@ import { LoginComponent } from './login/login.component';
     BrowserModule,
     FormsModule,
     HttpModule,
+    InMemoryWebApiModule.forRoot(InMemoryDataService),
     AppRoutingModule
   ],
   providers: [PersonService, TribeService],

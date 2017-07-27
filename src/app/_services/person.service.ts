@@ -14,16 +14,16 @@ export class PersonService {
   constructor(private http: Http){}
 
 
-    getAllPerson(): Promise<Person[]>{
-      return Promise.resolve(PERSONS);  
-    }
+    // getAllPerson(): Promise<Person[]>{
+    //   return Promise.resolve(PERSONS);  
+    // }
 
-  // getAllPerson(): Promise<Person[]>{
-  //       return this.http.get(this.personsUrl)
-  //       .toPromise()
-  //       .then(response => response.json().data as Person[])
-  //       .catch(this.handleError);
-  //   }
+  getAllPerson(): Promise<Person[]>{
+        return this.http.get(this.personsUrl)
+        .toPromise()
+        .then(response => response.json().data as Person[])
+        .catch(this.handleError);
+    }
 
     private handleError(error: any): Promise<any> {
     console.error('An error occurred', error); // for demo purposes only
