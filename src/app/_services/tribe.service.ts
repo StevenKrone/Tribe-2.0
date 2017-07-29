@@ -11,20 +11,20 @@ import 'rxjs/add/operator/toPromise';
 @Injectable()
 export class TribeService {
 
-  private tribeUrl = 'api/tribe';
+  private tribeUrl = 'api/tribes';
   constructor(private http: Http){}
 
 
-    getAllTribes(): Promise<Tribe[]>{
-      return Promise.resolve(TRIBES);  
-    }
+    // getAllTribes(): Promise<Tribe[]>{
+    //   return Promise.resolve(TRIBES);  
+    // }
 
-  // getAllPerson(): Promise<Person[]>{
-  //       return this.http.get(this.personsUrl)
-  //       .toPromise()
-  //       .then(response => response.json().data as Person[])
-  //       .catch(this.handleError);
-  //   }
+  getAllTribes(): Promise<Tribe[]>{
+        return this.http.get(this.tribeUrl)
+        .toPromise()
+        .then(response => response.json().data as Tribe[])
+        .catch(this.handleError);
+    }
 
   private handleError(error: any): Promise<any> {
     console.error('An error occurred', error); // for demo purposes only
