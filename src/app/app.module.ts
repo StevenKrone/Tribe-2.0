@@ -14,12 +14,12 @@ import { InMemoryDataService }  from './_services/in-memory-data.service';
 
 
 import { AppComponent } from './app.component';
-import { TribeslistComponent } from './tribeslist/tribeslist.component';
-import { TribedetailComponent } from './tribedetail/tribedetail.component';
-import { PersonslistComponent } from './personslist/personslist.component';
-import { PersonsdetailComponent } from './personsdetail/personsdetail.component';
-import { DashboardComponent } from './dashboard/dashboard.component';
-import { LoginComponent } from './login/login.component';
+import { TribeslistComponent } from './_components/tribeslist/tribeslist.component';
+import { TribedetailComponent } from './_components/tribedetail/tribedetail.component';
+import { PersonslistComponent } from './_components/personslist/personslist.component';
+import { PersonsdetailComponent } from './_components/personsdetail/personsdetail.component';
+import { DashboardComponent } from './_components/dashboard/dashboard.component';
+import { LoginComponent } from './_components/login/login.component';
 
 @NgModule({
   declarations: [

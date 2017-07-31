@@ -1,8 +1,8 @@
 import { Component, OnInit } from '@angular/core';
 import { Router } from '@angular/router';
 
-import { Tribe } from '../_class/tribe';
-import { TribeService } from '../_services/tribe.service';
+import { Tribe } from '../../_class/tribe';
+import { TribeService } from '../../_services/tribe.service';
 
 @Component({
   selector: 'app-tribeslist',

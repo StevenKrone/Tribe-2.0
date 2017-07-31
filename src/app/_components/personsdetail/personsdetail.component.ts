@@ -1,7 +1,7 @@
 import { Component, OnInit, Input } from '@angular/core';
 
-import { Person } from '../_class/person';
-import { PersonService } from '../_services/person.service';
+import { Person } from '../../_class/person';
+import { PersonService } from '../../_services/person.service';
 
 import { ActivatedRoute, ParamMap } from '@angular/router';
 //import { ActivatedRoute} from '@angular/router';
@@ -29,30 +29,18 @@ export class PersonsdetailComponent implements OnInit {
   ) { }
 
   ngOnInit() {
-  //Hard-Coded 
-    //this.person = { id: 11, name: 'Steven' };
-
-
-  //Option from StackOverflow
-    // this.sub = this.route
-    // .params
-    // .subscribe(params => { 
-    //   this.person = params['id'];
-    // })
-
-  //Option 2 from angular-tour-of-heroes
      this.route.paramMap
     .switchMap((params: ParamMap) => this.personService.getPerson(+params.get('id')))
     .subscribe(person => this.person = person);
   }
 
-    goBack(): void {
+  goBack(): void {
     this.location.back();
-}
+  }
 
-save(): void {
-  this.personService.update(this.person)
-    .then(() => this.goBack());
-}
+  save(): void {
+    this.personService.update(this.person)
+      .then(() => this.goBack());
+  }
 
 }
