@@ -16,9 +16,20 @@ import 'rxjs/add/operator/switchMap';
 })
 export class MessagingComponent implements OnInit {
 
-  constructor() { }
+  messages: Message[]
+
+  constructor(private messageService: MessageService) { }
 
   ngOnInit() {
+    this.getListofMessages();
   }
+
+  getListofMessages(): void{
+    this.messageService.getAllMessage().then(messages => this.messages = messages);
+  }
+
+
+  
+  
 
 }

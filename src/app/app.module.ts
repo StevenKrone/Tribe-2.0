@@ -7,6 +7,8 @@ import { AppRoutingModule } from './app-routing.module';
 
 import {PersonService} from './_services/person.service';
 import {TribeService} from './_services/tribe.service';
+import {MessageService} from './_services/messages.service';
+
 
 import { InMemoryWebApiModule } from 'angular-in-memory-web-api';
 import { InMemoryDataService }  from './_services/in-memory-data.service';
@@ -20,6 +22,8 @@ import { PersonslistComponent } from './_components/personslist/personslist.comp
 import { PersonsdetailComponent } from './_components/personsdetail/personsdetail.component';
 import { DashboardComponent } from './_components/dashboard/dashboard.component';
 import { LoginComponent } from './_components/login/login.component';
+import { MessagingComponent } from './_components/messaging/messaging.component';
+
 
 @NgModule({
   declarations: [
@@ -29,7 +33,8 @@ import { LoginComponent } from './_components/login/login.component';
     PersonslistComponent,
     PersonsdetailComponent,
     DashboardComponent,
-    LoginComponent
+    LoginComponent,
+    MessagingComponent
   ],
   imports: [
     BrowserModule,
@@ -38,7 +43,7 @@ import { LoginComponent } from './_components/login/login.component';
     InMemoryWebApiModule.forRoot(InMemoryDataService),
     AppRoutingModule
   ],
-  providers: [PersonService, TribeService],
+  providers: [PersonService, TribeService, MessageService],
   bootstrap: [AppComponent]
 })
 export class AppModule { }

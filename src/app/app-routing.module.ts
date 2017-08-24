@@ -6,6 +6,8 @@ import { TribeslistComponent } from './_components/tribeslist/tribeslist.compone
 import { TribedetailComponent } from './_components/tribedetail/tribedetail.component';
 import { PersonslistComponent } from './_components/personslist/personslist.component'; 
 import { PersonsdetailComponent } from './_components/personsdetail/personsdetail.component';
+import { MessagingComponent } from './_components/messaging/messaging.component';
+
 
 const routes: Routes = [
   { path: '', redirectTo: '/dashboard', pathMatch: 'full' },
@@ -13,7 +15,9 @@ const routes: Routes = [
   { path: 'personslist', component: PersonslistComponent},
   { path: 'persondetail/:id', component: PersonsdetailComponent },
   { path: 'tribes',     component: TribeslistComponent },
-  { path: 'tribedetail/:id',     component: TribedetailComponent }
+  { path: 'tribedetail/:id',     component: TribedetailComponent },
+  { path: 'messaging',     component: MessagingComponent }
+  
   
 ];
 
