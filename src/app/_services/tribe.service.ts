@@ -1,7 +1,7 @@
 import { Injectable } from '@angular/core';
 
 import {Tribe} from '../_class/tribe';
-import {TRIBES} from '../_mockdatafiles/mock-tribes';
+//import {TRIBES} from '../_mockdatafiles/mock-tribes';
 
 import { Headers, Http } from '@angular/http';
 

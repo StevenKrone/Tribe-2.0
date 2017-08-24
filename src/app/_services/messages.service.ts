@@ -1,27 +1,22 @@
 import { Injectable } from '@angular/core';
 
-import {Person} from '../_class/person';
-//import {PERSONS} from '../_mockdatafiles/mock-persons';
+import {Message} from '../_class/message';
 
 import { Headers, Http } from '@angular/http';
 
 import 'rxjs/add/operator/toPromise';
 
 @Injectable()
-export class PersonService {
+export class MessageService {
 
-  private personsUrl = 'api/persons';
+  private messagesUrl = 'api/messages';
   constructor(private http: Http){}
 
 
-    // getAllPerson(): Promise<Person[]>{
-    //   return Promise.resolve(PERSONS);  
-    // }
-
-  getAllPerson(): Promise<Person[]>{
-        return this.http.get(this.personsUrl)
+  getAllMessage(): Promise<Message[]>{
+        return this.http.get(this.messagesUrl)
         .toPromise()
-        .then(response => response.json().data as Person[])
+        .then(response => response.json().data as Message[])
         .catch(this.handleError);
     }
 
@@ -30,11 +25,11 @@ export class PersonService {
     return Promise.reject(error.message || error);
   }
   
-  getPerson(id: number): Promise<Person>{
-    const url = `${this.personsUrl}/${id}`;
+  getMessage(id: number): Promise<Message>{
+    const url = `${this.messagesUrl}/${id}`;
         return this.http.get(url)
         .toPromise()
-        .then(response => response.json().data as Person)
+        .then(response => response.json().data as Message)
         .catch(this.handleError);
   }
 
@@ -42,25 +37,25 @@ export class PersonService {
 
 
 
-  update(person: Person): Promise<Person> {
-    const url = `${this.personsUrl}/${person.id}`;
+  update(message: Message): Promise<Message> {
+    const url = `${this.messagesUrl}/${message.id}`;
     return this.http
-        .put(url, JSON.stringify(person), {headers: this.headers})
+        .put(url, JSON.stringify(message), {headers: this.headers})
         .toPromise()
-        .then(() => person)
+        .then(() => message)
         .catch(this.handleError);
     }
 
-    create(name: string): Promise<Person> {
+    create(name: string): Promise<Message> {
         return this.http
-            .post(this.personsUrl, JSON.stringify({name: name}), {headers: this.headers})
+            .post(this.messagesUrl, JSON.stringify({name: name}), {headers: this.headers})
             .toPromise()
-            .then(res => res.json().data as Person)
+            .then(res => res.json().data as Message)
             .catch(this.handleError);
         }
 
     delete(id: number): Promise<void> {
-        const url = `${this.personsUrl}/${id}`;
+        const url = `${this.messagesUrl}/${id}`;
         return this.http.delete(url, {headers: this.headers})
             .toPromise()
             .then(() => null)

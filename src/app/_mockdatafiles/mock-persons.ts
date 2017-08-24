@@ -2,6 +2,7 @@ import { Person } from '../_class/person';
 
 export const PERSONS: Person[] = [
   { id: 11, name: 'Steven' },
+  { id: 10, name: 'Kendra'},
   { id: 12, name: 'Shane' },
   { id: 13, name: 'Jean' },
   { id: 14, name: 'Lou' },
