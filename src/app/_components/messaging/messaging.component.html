@@ -2,6 +2,27 @@
   messaging works!
 </p>
 
+
+<div class="col-sm-3 col-sm-offset-1 frame">
+<div class="messages">
+  <div *ngFor="let chatFriend of friends">
+    chatFriend.name
+  <div *ngFor="let message of friendChat">
+    <div> ID | {{message.id}}</div>
+    <div> To | {{message.sender}}</div>
+    <div> From | {{message.receiver}}</div>
+    <div> Content | {{message.content}}</div>
+    <br/>
+  </div>
+  </div>
+</div>
+
+</div>
+
+
+
+
+
 <div class="col-sm-3 col-sm-offset-4 frame">
 <div class="messages">
   <div *ngFor="let message of messages">
